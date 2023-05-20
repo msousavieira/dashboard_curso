@@ -1,0 +1,70 @@
+---
+title: "Day 1 | Quarto Basics | Word"
+subtitle: "Escola Nacional de Saúde Pública"
+author: "A. Peralta-Santos"
+date: today
+date-format: long
+lang: pt  
+format: 
+  docx: 
+    reference-doc: templates/template1.docx
+    toc: true
+editor: visual
+bibliography: references.bib
+csl: templates/vancouver.csl 
+---
+
+{{< pagebreak >}}
+
+# Titulo 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu tempor velit. Fusce accumsan ultrices fringilla. Praesent sed odio mi. Mauris non ligula turpis. Duis posuere lacus nec diam interdum dictum suscipit magna molestie. Vestibulum nibh dolor, interdum eget rhoncus ut, sodales eget justo. Morbi blandit lorem sit amet nulla egestas aliquam. Nunc pharetra est at nibh ullamcorper in commodo erat dignissim. Cras et suscipit enim.
+
+## Titulo 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus neque ex, vehicula dictum risus fermentum, feugiat faucibus neque. Etiam purus quam, lacinia vel porta in, malesuada ac nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed bibendum placerat tellus, ac finibus lectus euismod eget.
+
+### Titulo 3
+
+Este é o *segundo* [curso]{.underline} de **R**
+
+Nulla mattis diam vitae bibendum consequat. Etiam vitae eros tristique, porta sapien a, aliquet mauris. Praesent ultricies mi nulla, et dignissim nulla mattis at. Fusce rhoncus leo quis odio euismod, hendrerit facilisis risus tincidunt. Aenean at lectus justo. Cras fringilla lacus nisl, ac convallis odio tincidunt vel. Integer vel egestas nisi. Curabitur vitae imperdiet justo.
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+## Create an inline URL
+
+A nice example [here](https://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html)
+
+Link para a localizacao do curso [ENSP](https://www.ensp.unl.pt/)
+
+[jornal](https://www.publico.pt)
+
+## Add image
+
+![Logotipo do curso](images/logo.png "Logo of our course"){#fig-logo width="6cm"}
+
+::: {#fig-maps layout-ncol="2"}
+![European Map](images/map_eu.png){#fig-eu width="360"}
+
+![Portugal](images/map_pt.jpeg){#fig-pt width="250"}
+
+Maps of Europe and Portugal
+:::
+
+## Cross References
+
+See @fig-maps for examples. In particular, @fig-pt.
+
+## Equations
+
+Use 2 dollar signs for an equation sepatared from text $$ E(log(Y_t)) = \beta_0 + \beta_{1-11} \sum_{m=1}^{m=12} MONTH_t  + \epsilon_t$$
+
+# Conclusion
+
+Lorem ipsum dolor sit amet [@litaker2005context], consectetur adipiscing elit. Proin eu tempor velit. Fusce accumsan ultrices fringilla [@cowin2005cadherins]. Praesent sed odio mi. Mauris non ligula turpis. Duis posuere lacus nec diam interdum dictum suscipit magna molestie. Vestibulum nibh dolor, interdum eget rhoncus ut, sodales eget justo. Morbi blandit lorem sit amet nulla egestas aliquam. Nunc pharetra est at nibh ullamcorper in commodo erat dignissim. Cras et suscipit enim.
+
+# References
+
+::: {#refs}
+:::

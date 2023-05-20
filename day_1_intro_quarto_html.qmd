@@ -1,0 +1,242 @@
+---
+title: "Day 1 | Quarto Basics "
+subtitle: "Introduction to html quarto"
+author: "A. Peralta-Santos"
+date: today
+date-format: long
+format:
+  html:
+    smooth-scroll: true
+    toc: true
+    toc-location: left
+theme: cosmo
+smooth-scroll: true
+lang: pt   
+execute:
+  warning: false
+  echo: TRUE
+bibliography: references2.bib 
+---
+
+# Titulo 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu tempor velit. Fusce accumsan ultrices fringilla. Praesent sed odio mi. Mauris non ligula turpis. Duis posuere lacus nec diam interdum dictum suscipit magna molestie. Vestibulum nibh dolor, interdum eget rhoncus ut, sodales eget justo. Morbi blandit lorem sit amet nulla egestas aliquam. Nunc pharetra est at nibh ullamcorper in commodo erat dignissim. Cras et suscipit enim.
+
+## Titulo 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu tempor velit. Fusce accumsan ultrices fringilla. Praesent sed odio mi. Mauris non ligula turpis. Duis posuere lacus nec diam interdum dictum suscipit magna molestie. Vestibulum nibh dolor, interdum eget rhoncus ut, sodales eget justo. Morbi blandit lorem sit amet nulla egestas aliquam. Nunc pharetra est at nibh ullamcorper in commodo erat dignissim. Cras et suscipit enim.
+
+## Titulo 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus neque ex, vehicula dictum risus fermentum, feugiat faucibus neque. Etiam purus quam, lacinia vel porta in, malesuada ac nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed bibendum placerat tellus, ac finibus lectus euismod eget.
+
+### Titulo 3
+
+Este é o *segundo* [curso]{.underline} de **R**
+
+Nulla mattis diam vitae bibendum consequat. Etiam vitae eros tristique, porta sapien a, aliquet mauris. Praesent ultricies mi nulla, et dignissim nulla mattis at. Fusce rhoncus leo quis odio euismod, hendrerit facilisis risus tincidunt. Aenean at lectus justo. Cras fringilla lacus nisl, ac convallis odio tincidunt vel. Integer vel egestas nisi. Curabitur vitae imperdiet justo.
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+> penso logo existo - descartes
+
+> citacao importante
+
+## Set the markdown setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse    = TRUE,
+  warning     = FALSE, # Whether to display warnings
+  message     = FALSE, # Whether to display messages
+  echo        = FALSE, # prevent printing of the R code that generated the plot 
+  eval        = TRUE   # Whether to evaluate the code and include its results
+  )
+
+set.seed(1)       # Set the seed is important for getting reproducible reports 
+options(scipen=5) # set the decimals 
+```
+
+## Create an inline URL
+
+A nice example [here](https://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html)
+
+[hiperlink publico](www.publico.pt)
+
+[jornal expresso](www.expresso.pt)
+
+[hyperlink google](www.google.com)
+
+New ideas [Quarto website](https://quarto.org/docs/output-formats/html-basics.html)
+
+Link para a localizacao do curso [ENSP](www.ensp.unl.pt)
+
+[jornal](www.publico.pt)
+
+## Add image
+
+![Logotipo do curso](images/logo.png "Logo of our course"){#fig-logo width="6cm"}
+
+## add another image
+
+![figure 1](images/lisboa.jpeg)
+
+::: {#fig-maps layout-ncol="2"}
+![European Map](images/map_eu.png){#fig-eu width="360"}
+
+![Portugal](images/map_pt.jpeg){#fig-pt width="250"}
+
+Maps of Europe and Portugal
+:::
+
+## Cross References
+
+See @fig-maps for examples. In particular, @fig-pt. or @fig-eu
+
+## Flowcharts
+
+```{mermaid}
+flowchart TD
+  A[Population] --> B(Study population)
+
+  B --> C{Salt substitute}
+
+  C --> D[Exposed]
+
+  C --> E[Not exposed]
+```
+
+::: panel-tabset
+## Introdution
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus neque ex, vehicula dictum risus fermentum, feugiat faucibus neque. Etiam purus quam, lacinia vel porta in, malesuada ac nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae
+
+## Images
+
+![Logotipo do curso](images/logo.png "Logo of our course"){width="6cm"}
+:::
+
+## Equations
+
+Use 2 dollar signs for an equation sepatared from text $$ E(log(Y_t)) = \beta_0 + \beta_{1-11} \sum_{m=1}^{m=12} MONTH_t + \beta_{12} TIME + \beta_{13} INT_t + \beta_{14} TIME*INT_t + log(POP_t) + \epsilon_t$$
+
+equacao simples $Y=ax+2$
+
+Use a single dollar sign for math along side the text $E(log(Y_t))$
+
+## Inline coding
+
+```{r}
+x <- 2+2
+x
+```
+
+```{r}
+# Z e a media de idades
+media_idade  <- 43
+```
+
+```{r}
+y <- 10*2 
+
+```
+
+```{r}
+a <- 50  
+b <- 12
+c <- 8 
+
+d <- a+b+c 
+```
+
+The result of X is `r x`
+
+O numero total de doente `r y`
+
+O número de cirurgias desta semana é `r d`
+
+A media de idades e `r media_idade`
+
+## Text formating
+
+## Footnote
+
+The Data Science for healthcare students are the best [^1]
+
+[^1]: This is a footnote
+
+We love R [^2]
+
+[^2]: this is another footnote
+
+another footnote [^3]
+
+[^3]: outro teste
+
+### Create a table
+
+| Type           | Number | Average Stay |
+|----------------|--------|--------------|
+| Hospitals      | 5000   | 10           |
+| Primary care   | 20000  | 1            |
+| Long term care | 2000   | 100          |
+
+: This is a table
+
+| dia    | doentes |
+|--------|---------|
+| `r  c` | 150     |
+| 2      | 160     |
+
+#### Insert a URL
+
+[this is a URL](https://www.ensp.unl.pt/cursos/cursos-de-curta-duracao/data-science-with-r-in-healthcare/)
+
+Write in **Bold**
+
+Write in *Italic*
+
+#### Create lists
+
+No special order
+
+-   item 1
+-   item 2
+-   item 3
+
+Special order
+
+1.  item 1
+2.  item 2
+3.  item 3
+
+Lets try kniting this markdown
+
+-   item 1
+-   item 2
+
+1.  primeiro
+2.  segundo
+
+## Creating a reference
+
+[@santos2022omicron]
+
+[@litaker2005context]
+
+[@cowin2005cadherins]
+
+[@sharma2010various]
+
+[@perkins2020increasing]
+
+## Problemas
+
+Install pandoc https://pandoc.org/installing.html
+
+For macbook M2 https://github.com/rstudio/rstudio/issues/12512
+
+# References
+
+::: {#refs}
+:::
